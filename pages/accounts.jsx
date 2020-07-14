@@ -13,49 +13,114 @@ const db = firebase.firestore();
 
 const Accounts = () => {
   const [accounts, setAccounts] = useState([]);
+  const [account, setAccount] = useState({});
   const [isVisible, setIsVisible] = useState(false);
+  const [type, setType] = useState("")
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
   const [email, setEmail] = useState("");
+  const [uid, setUid] = useState("");
+  const [id, setId] = useState("");
 
   const clearState = () => {
     setName("");
     setPass("");
     setEmail("");
+    setType("");
   };
 
-  const signUp = async () => {
-    try {
-      await axios.post("/api/users", {user:{
-        name: name,
-        password: pass,
-        email: email
-      }});
-    } catch (error) {}
-  };
-
-  useEffect(()=>{
+  useEffect(() => {
     (async () => {
-        const accounts = (await db.collection('users').get()).docs
-        .map(account => ({...account.data()}));
-        setAccounts(accounts);
+      const accounts = (await db.collection('users').get()).docs
+        .map(account => ({ id:account.id ,...account.data() }));
+      setAccounts(accounts);
     })();
-  },[])
+  }, []);
 
-  const submit = () => {
+  const update = async () => {
+    try {
+      const response = await axios.put("api/users", {
+        user: {
+          name: name,
+          password: pass,
+          email: email
+        },
+        uid: uid
+      }
+      );
+      if (await response.status === 200) {
+        alert('La cuenta ha sido actualizada exitosamente');
+        account.uid = response.data.uid;
+      }
+    } catch (error) {
+      alert('Hubo un fallo al actualizar la cuenta, verifique que los valores sean correctos');
+    }
+
+    db.collection('users').doc(id).update({
+      "name": name,
+      "email": email
+    })
+    const oldAccounts = [...accounts];
+    const newAccounts = oldAccounts.map(account => {
+      if(account.id === id){
+        account.name = name;
+        account.email = email;
+        return account;
+      }
+    })
+    setAccounts(newAccounts);
+    clearState();
+    setIsVisible(false);
+  }
+
+const deleteUser = async () => {
+    const { uid, id } = account;
+    try {
+      const response = await axios.delete("api/users", { uid: uid });
+      if (await response.status === 200) {
+        alert('La cuenta ha sido eliminada exitosamente');
+        account.uid = response.data.uid;
+      }
+    } catch (error) {
+      alert('Hubo un fallo al eliminar la cuenta');
+    }
+
+    db.collection("users").doc(id).delete()
+    clearState();
+    setIsVisible(false);
+  }
+
+  const submit = async () => {
     const account = {
       name: name,
       pass: pass,
       email: email,
     };
-    db.collection('users').add(account);
+    try {
+      const response = await axios.post("/api/users", {
+        user: {
+          name: name,
+          password: pass,
+          email: email
+        }
+      });
+      if (await response.status === 200) {
+        alert('La cuenta ha sido creada exitosamente');
+        account.uid = response.data.uid;
+      }
+    } catch (error) {
+      alert('Hubo un fallo al crear la cuenta, verifique que los valores sean correctos');
+    }
+    delete account.pass;
+    const userRef = db.collection('users').doc();
+    userRef.set(account);
+    account.id = userRef.id;
     const newAccounts = [...accounts];
     newAccounts.push(account);
     setAccounts(newAccounts);
-    signUp();
+
     clearState();
     setIsVisible(false);
-    console.log()
   };
 
   const closeModal = () => {
@@ -66,20 +131,36 @@ const Accounts = () => {
   return (
     <AccountsWrapper>
       <StyledTitle>Cuentas</StyledTitle>
-      <AddItem onClick={() => setIsVisible(true)} />
+      <AddItem onClick={() => {
+        setType("post");
+        setIsVisible(true)
+      }} />
       {accounts.map((account) => (
         <AccountListItem
           key={account.email}
           name={account.name}
           email={account.email}
+          updateusr={() => {
+            setName(account.name);
+            setPass(account.pass);
+            setEmail(account.email);
+            setUid(account.uid);
+            setId(account.id);
+            setIsVisible(true);
+            setType("update");
+          }}
+          deleteusr={() => {
+            setAccount(account);
+            deleteUser();
+          }}
         />
       ))}
 
       <Modal
-        title="Crear cuenta"
+        title={type === "post" ? "Crear cuenta" : "Editar cuenta"}
         visible={isVisible}
         onCancel={closeModal}
-        onSubmit={submit}
+        onSubmit={type === "post" ? submit : update}
       >
         <Input
           type="text"
