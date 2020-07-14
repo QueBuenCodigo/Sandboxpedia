@@ -42,7 +42,6 @@ const FormItem = styled.div`
   font-family: "Lato", sans-serif;
   position: relative;
   padding: 15px 0 0;
-  margin-top: 10px;
   width: 100%;
 
   .form__field:focus {
@@ -71,7 +70,7 @@ const Input = styled.input`
   border: 0;
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
-  font-size: 1.3rem;
+  font-size: 16px;
   color: #000000;
   padding: 7px 0;
   background: transparent;
@@ -81,7 +80,7 @@ const Input = styled.input`
     color: transparent;
   }
   &:placeholder-shown ~ span {
-    font-size: 1.3rem;
+    font-size: 16px;
     cursor: text;
     top: 20px;
   }
@@ -91,7 +90,7 @@ const Input = styled.input`
     top: 0;
     display: block;
     transition: 0.2s;
-    font-size: 1rem;
+    font-size: 14px;
     color: #11998e;
     font-weight: 700;
   }

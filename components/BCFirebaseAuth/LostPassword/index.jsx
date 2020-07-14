@@ -52,13 +52,13 @@ const LostPassword = props => {
                 }}
               >
                 {() => (
-                  <Form>
+                  <GridForm>
                     <LoginInput name="email" placeholder="Tu email" label="Tu email" />
                     <LoginButton>Cambiar mi contraseña</LoginButton>
                     <GoBack onClick={()=>goTo(Step.login)}>
                       {"< Regresar a inicio de sesión"}
                     </GoBack>
-                  </Form>
+                  </GridForm>
                 )}
               </Formik>
             </LoginWithEmail>
@@ -73,6 +73,11 @@ const LostPassword = props => {
  
   );
 };
+
+const GridForm = styled(Form)`
+  display:grid;
+  gap:16px;
+`;
 
 const LoginView = styled.div`
   @media only screen and (min-width: 48em) {

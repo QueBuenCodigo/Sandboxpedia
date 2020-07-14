@@ -130,22 +130,17 @@ const ToastWrapper = styled.div<ToastWrapperProps>`
   pointer-events: auto;
   overflow: hidden;
   margin: 0 0 6px;
-  padding: 30px;
   margin-bottom: 15px;
   width: 300px;
-  max-height: 100px;
   border-radius: 3px 3px 3px 3px;
   box-shadow: 0 0 10px #999;
   color: #fff;
   opacity: 0.9;
   background-position: 15px;
   background-repeat: no-repeat;
-
-  height: 50px;
   width: 365px;
   color: #fff;
-  padding: 20px 15px 10px 10px;
-
+  padding:24px;
   &:hover {
     box-shadow: 0 0 12px #fff;
     opacity: 1;
@@ -159,17 +154,15 @@ const ToastWrapper = styled.div<ToastWrapperProps>`
     margin-top: 0;
     margin-bottom: 6px;
     width: 300px;
-    height: 18px;
   }
 
   .notification-message {
     margin: 0;
     text-align: left;
-    height: 18px;
     margin-left: -1px;
-    overflow: hidden;
+    /* overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap; */
   }
 
   .notification-image {

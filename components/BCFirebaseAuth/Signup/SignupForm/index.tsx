@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import * as yup from "yup";
-import { Formik, Field,Form } from "formik";
-import FieldFormItem from "../../BCField"
+import { Formik, Field, Form } from "formik";
+import FieldFormItem from "../../BCField";
 
 const Signup = () => {
   const [loading, setLoading] = useState<Boolean>(false);
@@ -44,33 +44,50 @@ const Signup = () => {
         validateOnChange
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={async (values) => {
-        }}
+        onSubmit={async (values) => {}}
       >
         {({ errors, touched }) => (
-          <Form>
-            <LoginInput name="name" placeholder="Nombre completo" label="Nombre completo" />
-            <LoginInput name="email" placeholder="Correo electrónico" label="Correo electrónico" />
-            <LoginInput type="password" placeholder="Contraseña" name="password" label="Contraseña" />
+          <GridForm>
+            <LoginInput
+              name="name"
+              placeholder="Nombre completo"
+              label="Nombre completo"
+            />
+            <LoginInput
+              name="email"
+              placeholder="Correo electrónico"
+              label="Correo electrónico"
+            />
+            <LoginInput
+              type="password"
+              placeholder="Contraseña"
+              name="password"
+              label="Contraseña"
+            />
             <LoginInput
               type="password"
               name="passwordConfirmation"
               placeholder="Confirma tu contraseña"
               label="Confirma tu contraseña"
             />
-            <FieldFormItem type="checkbox" name="tos" label="Acepto Términos de Servicio y Política de Privacidad"  />
-           
-              {/* <Field name="tos" type="checkbox">
-                Acepto Términos de Servicio y Política de Privacidad
-              </Field> */}
-           
+            <FieldFormItem
+              type="checkbox"
+              name="tos"
+              label="Acepto Términos de Servicio y Política de Privacidad"
+            />
+
             <LoginButton>Crear mi cuenta</LoginButton>
-          </Form>
+          </GridForm>
         )}
       </Formik>
     </LoginWithEmail>
   );
 };
+
+const GridForm = styled(Form)`
+  display: grid;
+  gap: 16px;
+`;
 
 const Button = styled.button`
   width: 100%;
@@ -168,7 +185,5 @@ const LoginButton = styled(Button)`
     color: #fff;
   }
 `;
-
-
 
 export default Signup;

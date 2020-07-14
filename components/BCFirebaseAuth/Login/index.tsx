@@ -7,6 +7,7 @@ import FieldFormItem from "../BCField";
 import BCButton from "../BCButton";
 import authHelper from "../utils/authHelper";
 import {Step} from "../"
+import {errors} from "../constants/errors"
 
 interface Props{
   signInSuccessWithAuthResult:()=>void;
@@ -51,7 +52,7 @@ const Login:React.FC<Props> = (props) => {
       "121232"
     );
     if (error) {
-      signInErrorWithErrorMessage(error.code);
+      signInErrorWithErrorMessage(errors[error.code]);
     }
   };
 
@@ -101,6 +102,8 @@ const Login:React.FC<Props> = (props) => {
 
 const StyledForm = styled(Form)`
   display: grid;
+  grid-template-columns: 100%;
+  gap:16px;
 `;
 
 const LoginView = styled.div`

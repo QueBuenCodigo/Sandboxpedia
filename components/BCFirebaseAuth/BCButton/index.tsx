@@ -17,6 +17,7 @@ const Button = styled.button`
     border:0;
     cursor:pointer;
     outline:0;
+    font-size:16px;
 `;
 
 export default BCButton;
