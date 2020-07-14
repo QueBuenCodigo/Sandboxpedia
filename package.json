@@ -1,0 +1,48 @@
+{
+  "name": "with-storybook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "firebase": "^7.16.0",
+    "firebase-admin": "^8.13.0",
+    "formik": "^2.1.4",
+    "js-cookie": "^2.2.1",
+    "next": "latest",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-firebaseui": "^4.1.0",
+    "react-icons": "^3.10.0",
+    "styled-components": "^5.1.1",
+    "swr": "^0.2.3",
+    "yup": "^0.29.1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/addon-actions": "5.3.19",
+    "@storybook/addon-links": "5.3.19",
+    "@storybook/addons": "5.3.19",
+    "@storybook/preset-typescript": "3.0.0",
+    "@storybook/react": "5.3.19",
+    "@types/axios": "^0.14.0",
+    "@types/firebase": "^3.2.1",
+    "@types/js-cookie": "^2.2.6",
+    "@types/node": "14.0.13",
+    "@types/react": "16.9.38",
+    "@types/styled-components": "^5.1.1",
+    "@types/yup": "^0.29.3",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-styled-components": "^1.10.7",
+    "fork-ts-checker-webpack-plugin": "5.0.4",
+    "next-images": "^1.4.0",
+    "ts-loader": "7.0.5",
+    "typescript": "3.9.5"
+  }
+}
