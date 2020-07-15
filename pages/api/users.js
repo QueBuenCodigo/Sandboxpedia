@@ -2,19 +2,19 @@ import { verifyIdToken, createUser, deleteUser, updateUser } from "../../utils/a
 
 export default async (req, res) => {
   const { user, uid } = req.body;
-  let response = null;
+  const {id} = req.query;
   switch (req.method) {
     case 'POST':
-      response = await createUser(user)
+      const response = await createUser(user)
       res.status(200).json(response)
       break;
     case 'DELETE':
-      response = await deleteUser(uid)
-      res.status(200).json(response)
+      await deleteUser(id)
+      res.status(200).send('ok')
       break;
     case 'PUT':
-      response = await updateUser(uid, user)
-      res.status(200).json(response)
+      await updateUser(uid, user)
+      res.status(200).send('ok')
       break;
 
   }

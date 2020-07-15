@@ -13,12 +13,13 @@ const db = firebase.firestore();
 
 const Accounts = () => {
   const [accounts, setAccounts] = useState([]);
-  const [account, setAccount] = useState({});
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisiblePost, setIsVisiblePost] = useState(false);
+  const [isVisibleUpdate, setIsVisibleUpdate] = useState(false);
   const [type, setType] = useState("")
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
   const [email, setEmail] = useState("");
+  const [rol, setRol] = useState("");
   const [uid, setUid] = useState("");
   const [id, setId] = useState("");
 
@@ -26,18 +27,18 @@ const Accounts = () => {
     setName("");
     setPass("");
     setEmail("");
-    setType("");
   };
 
   useEffect(() => {
     (async () => {
       const accounts = (await db.collection('users').get()).docs
-        .map(account => ({ id:account.id ,...account.data() }));
+        .map(account => ({ id: account.id, ...account.data() }));
       setAccounts(accounts);
     })();
   }, []);
 
-  const update = async () => {
+  const update = async (account) => {
+    const { name, pass, email, rol } = account;
     try {
       const response = await axios.put("api/users", {
         user: {
@@ -50,7 +51,6 @@ const Accounts = () => {
       );
       if (await response.status === 200) {
         alert('La cuenta ha sido actualizada exitosamente');
-        account.uid = response.data.uid;
       }
     } catch (error) {
       alert('Hubo un fallo al actualizar la cuenta, verifique que los valores sean correctos');
@@ -58,11 +58,12 @@ const Accounts = () => {
 
     db.collection('users').doc(id).update({
       "name": name,
-      "email": email
+      "email": email,
+      "rol": rol
     })
     const oldAccounts = [...accounts];
     const newAccounts = oldAccounts.map(account => {
-      if(account.id === id){
+      if (account.id === id) {
         account.name = name;
         account.email = email;
         return account;
@@ -70,24 +71,26 @@ const Accounts = () => {
     })
     setAccounts(newAccounts);
     clearState();
-    setIsVisible(false);
+    setIsVisibleUpdate(false);
   }
 
-const deleteUser = async () => {
+  const deleteUser = async (account, index) => {
     const { uid, id } = account;
+    console.log(account);
     try {
-      const response = await axios.delete("api/users", { uid: uid });
+      const response = await axios.delete(`api/users?id=${uid}`);
       if (await response.status === 200) {
         alert('La cuenta ha sido eliminada exitosamente');
-        account.uid = response.data.uid;
       }
     } catch (error) {
       alert('Hubo un fallo al eliminar la cuenta');
     }
 
     db.collection("users").doc(id).delete()
+    const newAccounts = [...accounts];
+    newAccounts.splice(index, 1);
+    setAccounts(newAccounts);
     clearState();
-    setIsVisible(false);
   }
 
   const submit = async () => {
@@ -95,6 +98,7 @@ const deleteUser = async () => {
       name: name,
       pass: pass,
       email: email,
+      rol: rol
     };
     try {
       const response = await axios.post("/api/users", {
@@ -120,12 +124,11 @@ const deleteUser = async () => {
     setAccounts(newAccounts);
 
     clearState();
-    setIsVisible(false);
+    setIsVisiblePost(false);
   };
 
   const closeModal = () => {
-    setIsVisible(false);
-    clearState();
+
   };
 
   return (
@@ -133,9 +136,9 @@ const deleteUser = async () => {
       <StyledTitle>Cuentas</StyledTitle>
       <AddItem onClick={() => {
         setType("post");
-        setIsVisible(true)
+        setIsVisiblePost(true)
       }} />
-      {accounts.map((account) => (
+      {accounts.map((account, index) => (
         <AccountListItem
           key={account.email}
           name={account.name}
@@ -146,21 +149,23 @@ const deleteUser = async () => {
             setEmail(account.email);
             setUid(account.uid);
             setId(account.id);
-            setIsVisible(true);
+            setRol(account.rol);
+            setIsVisibleUpdate(true);
             setType("update");
+
           }}
-          deleteusr={() => {
-            setAccount(account);
-            deleteUser();
-          }}
+          deleteusr={() => deleteUser(account, index)}
         />
       ))}
 
       <Modal
-        title={type === "post" ? "Crear cuenta" : "Editar cuenta"}
-        visible={isVisible}
-        onCancel={closeModal}
-        onSubmit={type === "post" ? submit : update}
+        title="Crear cuenta"
+        visible={isVisiblePost}
+        onCancel={() => {
+          setIsVisiblePost(false);
+          clearState();
+        }}
+        onSubmit={submit}
       >
         <Input
           type="text"
@@ -180,6 +185,55 @@ const deleteUser = async () => {
           value={pass}
           placeholder="Contraseña"
         />
+        <Select
+          onChange={(e) => setRol(e.currentTarget.value)}
+          value={rol}>
+          <option value="0">Selecciona un rol</option>
+          <option value="ADMIN">Administrador</option>
+          <option value="SELLER">Vendedor</option>
+        </Select>
+      </Modal>
+
+      <Modal
+        title="Editar cuenta"
+        visible={isVisibleUpdate}
+        onCancel={() => {
+          setIsVisibleUpdate(false);
+          clearState();
+        }}
+        onSubmit={() => update({
+          name: name,
+          pass: pass,
+          email: email,
+          rol: rol
+        })}
+      >
+        <Input
+          type="text"
+          onChange={(e) => setName(e.currentTarget.value)}
+          value={name}
+          placeholder="Nombre"
+        />
+        <Input
+          type="email"
+          onChange={(e) => setEmail(e.currentTarget.value)}
+          value={email}
+          placeholder="Email"
+        />
+        <Input
+          type="password"
+          onChange={(e) => setPass(e.currentTarget.value)}
+          value={pass}
+          placeholder="Contraseña"
+        />
+        <Select
+          onChange={(e) => setRol(e.currentTarget.value)}
+          value={rol}>
+          <option value="0">Selecciona un rol</option>
+          <option value="ADMIN">Administrador</option>
+          <option value="SELLER">Vendedor</option>
+        </Select>
+
       </Modal>
     </AccountsWrapper>
   );
@@ -211,5 +265,19 @@ const Input = styled.input`
     font-size: 14px;
   }
 `;
+
+const Select = styled.select`
+  width: 98%;
+  margin: 10px 0;
+  font-size: 16px;
+  padding-left: 8px;
+  height: 27px;
+
+  border: solid 1px #c1e4fe;
+  border-radius: 8px;
+
+  outline-color: #3899ec;
+`;
+
 
 export default Accounts;
