@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup Snapshot comprobar la UI del componente Signup 1`] = `
+<div
+  className="Signup__LoginView-sc-1fw94rv-0 zfEgP"
+>
+  <div
+    className="Signup__LoginCard-sc-1fw94rv-1 hefdtw"
+  >
+    <div
+      className="Signup__LoginContainer-sc-1fw94rv-2 leJIjP"
+    >
+      <span
+        className="Signup__RegisterDisclaimer-sc-1fw94rv-3 hPSsXz"
+      >
+        Crea tu cuenta para empezar a vender
+      </span>
+      <div
+        className="Signup__LoginSocial-sc-1fw94rv-4 hEGDrO"
+      >
+        <button
+          className="Signup__Button-sc-1fw94rv-5 Signup__Facebook-sc-1fw94rv-6 bZyvJf"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+            />
+          </svg>
+          <span>
+            Regístrate con Facebook
+          </span>
+        </button>
+        <button
+          className="Signup__Button-sc-1fw94rv-5 Signup__Twitter-sc-1fw94rv-7 hgPHpc"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+            />
+          </svg>
+          <span>
+            Regístrate con Twitter
+          </span>
+        </button>
+        <div
+          className="Signup__LoginDivider-sc-1fw94rv-8 dOoBEo"
+        >
+          <span
+            className="Signup__LoginDividerText-sc-1fw94rv-9 gqlYdv"
+          >
+            o
+          </span>
+        </div>
+        <button
+          className="Signup__Button-sc-1fw94rv-5 Signup__LoginButton-sc-1fw94rv-10 cSCWtw"
+          onClick={[Function]}
+        >
+          Registrate con tu Email
+        </button>
+      </div>
+      <div
+        className="Signup__AccountFooter-sc-1fw94rv-12 QndjN"
+      >
+        <span>
+          ¿Ya tienes una cuenta en Buena Tienda?
+        </span>
+        <button
+          className="Signup__RegisterButton-sc-1fw94rv-13 dzpBkM"
+          onClick={[Function]}
+        >
+          Inicia tu sesión
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

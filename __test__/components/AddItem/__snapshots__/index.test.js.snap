@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` AddItem Snapshot comprobar la UI del componente AddItem 1`] = `
+<button
+  className="AddItem__StyledAddItem-sc-1ikvgje-0 jVchal"
+>
+  <div>
+    Add Item
+  </div>
+</button>
+`;

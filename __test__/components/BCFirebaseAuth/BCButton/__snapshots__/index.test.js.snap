@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BCButton Snapshot comprobar la UI del componente BCButton 1`] = `
+<button
+  className="BCButton__Button-sc-18tvwvx-0 lgdhbd"
+/>
+`;

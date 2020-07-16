@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` AccountListItemAccountListItem Modal comprobar la UI del componente Modal 1`] = `
+<div
+  className="Modal__NewModal-sc-2eosl3-0 jrhpSP"
+>
+  <div
+    className="Modal__ModalBody-sc-2eosl3-1 RWztV"
+  >
+    <div>
+      <p />
+      <button>
+        X
+      </button>
+    </div>
+    <div />
+    <div>
+      <button>
+        Cancelar
+      </button>
+      <button>
+        Guardar
+      </button>
+    </div>
+  </div>
+</div>
+`;

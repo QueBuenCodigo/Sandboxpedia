@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` AccountListItemAccountListItem Snapshot comprobar la UI del componente AccountListItem 1`] = `
+<div
+  className="AccountListItem__StyledAccountItem-sc-5o950i-0 kvzEuE"
+>
+  <img
+    alt="user"
+    src="https://w7.pngwing.com/pngs/858/581/png-transparent-profile-icon-user-computer-icons-system-chinese-wind-title-column-miscellaneous-service-logo.png"
+  />
+  <div>
+    <p />
+    <p />
+  </div>
+</div>
+`;

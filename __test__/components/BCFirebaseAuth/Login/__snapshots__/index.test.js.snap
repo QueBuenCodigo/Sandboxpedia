@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Snapshot comprobar la UI del componente Login 1`] = `
+<div
+  className="Login__LoginView-sc-1wqjwyn-1 iWKuiH"
+>
+  <div
+    className="Login__LoginCard-sc-1wqjwyn-2 bbKUTC"
+  >
+    <div
+      className="Login__LoginContainer-sc-1wqjwyn-3 kpOQgL"
+    >
+      <div
+        className="Login__LoginSocial-sc-1wqjwyn-4 eMdmsL"
+      >
+        <button
+          className="Login__Button-sc-1wqjwyn-5 Login__Facebook-sc-1wqjwyn-6 bnQKRu"
+          onClick={[Function]}
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+            />
+          </svg>
+          <span>
+            Inicia sesión con Facebook
+          </span>
+        </button>
+        <button
+          className="Login__Button-sc-1wqjwyn-5 Login__Twitter-sc-1wqjwyn-7 epOzkN"
+          onClick={[Function]}
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+            />
+          </svg>
+          <span>
+            Inicia sesión con Twitter
+          </span>
+        </button>
+      </div>
+      <div
+        className="Login__LoginDivider-sc-1wqjwyn-8 jeMCSc"
+      >
+        <span
+          className="Login__LoginDividerText-sc-1wqjwyn-9 dafOoy"
+        >
+          o
+        </span>
+      </div>
+      <div
+        className="Login__LoginWithEmail-sc-1wqjwyn-10 nWTls"
+      >
+        <form
+          action="#"
+          className="Login__StyledForm-sc-1wqjwyn-0 hNMcuq"
+          onReset={[Function]}
+          onSubmit={[Function]}
+        >
+          <div
+            className="BCField__FormItem-sc-85pqlt-0 dvOPuG"
+          >
+            <label
+              className="BCField__InputLabel-sc-85pqlt-1 iLkEPd form__label"
+            >
+              <input
+                className="BCField__Input-sc-85pqlt-2 bbKpRK form__field"
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Tu email"
+                value=""
+              />
+              <span>
+                Tu email
+              </span>
+            </label>
+          </div>
+          <div
+            className="BCField__FormItem-sc-85pqlt-0 dvOPuG"
+          >
+            <label
+              className="BCField__InputLabel-sc-85pqlt-1 iLkEPd form__label"
+            >
+              <input
+                className="BCField__Input-sc-85pqlt-2 bbKpRK form__field"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Tu contraseña"
+                value=""
+              />
+              <span>
+                Tu contraseña
+              </span>
+            </label>
+          </div>
+          <button
+            className="Login__Button-sc-1wqjwyn-5 Login__LoginButton-sc-1wqjwyn-12 hamVkz"
+            type="submit"
+          >
+            Inicia sesión
+          </button>
+          <button
+            className="BCButton__Button-sc-18tvwvx-0 lgdhbd Login__LostPassword-sc-1wqjwyn-13 gJFSQE"
+            onClick={[Function]}
+          >
+            ¿Olvidaste tu contraseña?
+          </button>
+        </form>
+      </div>
+      <div
+        className="Login__AccountFooter-sc-1wqjwyn-14 gqEwqS"
+      >
+        <span>
+          ¿Aún no tienes cuenta en Buena Tienda?
+        </span>
+        <button
+          className="Login__RegisterButton-sc-1wqjwyn-15 jBgDsH"
+          onClick={[Function]}
+        >
+          Regístrate
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

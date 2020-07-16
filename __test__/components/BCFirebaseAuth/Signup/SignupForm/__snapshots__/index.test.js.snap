@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup Snapshot comprobar la UI del componente Signup 1`] = `
+<div
+  className="SignupForm__LoginWithEmail-ddo973-2 fQstml"
+>
+  <form
+    action="#"
+    className="SignupForm__GridForm-ddo973-0 ftBBbE"
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="BCField__FormItem-sc-85pqlt-0 dvOPuG"
+    >
+      <label
+        className="BCField__InputLabel-sc-85pqlt-1 iLkEPd form__label"
+      >
+        <input
+          className="BCField__Input-sc-85pqlt-2 bbKpRK form__field"
+          name="name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Nombre completo"
+          value=""
+        />
+        <span>
+          Nombre completo
+        </span>
+      </label>
+    </div>
+    <div
+      className="BCField__FormItem-sc-85pqlt-0 dvOPuG"
+    >
+      <label
+        className="BCField__InputLabel-sc-85pqlt-1 iLkEPd form__label"
+      >
+        <input
+          className="BCField__Input-sc-85pqlt-2 bbKpRK form__field"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Correo electrónico"
+          value=""
+        />
+        <span>
+          Correo electrónico
+        </span>
+      </label>
+    </div>
+    <div
+      className="BCField__FormItem-sc-85pqlt-0 dvOPuG"
+    >
+      <label
+        className="BCField__InputLabel-sc-85pqlt-1 iLkEPd form__label"
+      >
+        <input
+          className="BCField__Input-sc-85pqlt-2 bbKpRK form__field"
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Contraseña"
+          type="password"
+          value=""
+        />
+        <span>
+          Contraseña
+        </span>
+      </label>
+    </div>
+    <div
+      className="BCField__FormItem-sc-85pqlt-0 dvOPuG"
+    >
+      <label
+        className="BCField__InputLabel-sc-85pqlt-1 iLkEPd form__label"
+      >
+        <input
+          className="BCField__Input-sc-85pqlt-2 bbKpRK form__field"
+          name="passwordConfirmation"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Confirma tu contraseña"
+          type="password"
+          value=""
+        />
+        <span>
+          Confirma tu contraseña
+        </span>
+      </label>
+    </div>
+    <label
+      className="BCField__CheckboxLabel-sc-85pqlt-3 dZLqa-d"
+    >
+      <input
+        checked={false}
+        className="BCField__Checkbox-sc-85pqlt-4 gQPCLH"
+        name="tos"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="checkbox"
+        value={false}
+      />
+      <span
+        className="BCField__Checkmark-sc-85pqlt-5 jkTCtY"
+      />
+      Acepto Términos de Servicio y Política de Privacidad
+    </label>
+    <button
+      className="SignupForm__Button-ddo973-1 SignupForm__LoginButton-ddo973-4 jDJyDt"
+    >
+      Crear mi cuenta
+    </button>
+  </form>
+</div>
+`;

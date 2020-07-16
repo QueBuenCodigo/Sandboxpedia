@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LostPassword Snapshot comprobar la UI del componente LostPassword 1`] = `
+<div
+  className="LostPassword__LoginView-sc-1nz6n64-1 eKfoTx"
+>
+  <div
+    className="LostPassword__LoginCard-sc-1nz6n64-2 htKbik"
+  >
+    <div
+      className="LostPassword__LoginContainer-sc-1nz6n64-3 btMRmh"
+    >
+      <div
+        className="LostPassword__PasswordResetFormTitle-sc-1nz6n64-4 ekvSZS"
+      >
+        <h2>
+          ¿Olvidaste tu contraseña?
+        </h2>
+        <span>
+          Te enviaremos un enlace a tu correo para que puedas cambiar la contraseña
+        </span>
+      </div>
+      <div
+        className="LostPassword__LoginWithEmail-sc-1nz6n64-6 fpFLmt"
+      >
+        <form
+          action="#"
+          className="LostPassword__GridForm-sc-1nz6n64-0 hHgsij"
+          onReset={[Function]}
+          onSubmit={[Function]}
+        >
+          <div
+            className="BCField__FormItem-sc-85pqlt-0 dvOPuG"
+          >
+            <label
+              className="BCField__InputLabel-sc-85pqlt-1 iLkEPd form__label"
+            >
+              <input
+                className="BCField__Input-sc-85pqlt-2 bbKpRK form__field"
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Tu email"
+                value=""
+              />
+              <span>
+                Tu email
+              </span>
+            </label>
+          </div>
+          <button
+            className="LostPassword__Button-sc-1nz6n64-5 LostPassword__LoginButton-sc-1nz6n64-8 cKUUYO"
+          >
+            Cambiar mi contraseña
+          </button>
+          <button
+            className="BCButton__Button-sc-18tvwvx-0 lgdhbd LostPassword__GoBack-sc-1nz6n64-9 kWbfmF"
+            onClick={[Function]}
+          >
+            &lt; Regresar a inicio de sesión
+          </button>
+        </form>
+      </div>
+      <div
+        className="LostPassword__AccountFooter-sc-1nz6n64-10 jnmBOc"
+      >
+        <span>
+          ¿Aún no tienes cuenta en Buena Tienda?
+        </span>
+        <button
+          className="LostPassword__RegisterButton-sc-1nz6n64-11 gnFYWN"
+          onClick={[Function]}
+        >
+          Regístrate
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
